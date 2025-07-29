@@ -1,0 +1,6 @@
+/* 限制代码块最大高度，显示滚动条 */
+pre code {
+  display: block;
+  max-height: 30em; /* 大约 20 行，根据行高调整 */
+  overflow: auto;
+}
