@@ -1,6 +1,6 @@
-site_name: Jeff's Algorithm and Leetcode Notes
+site_name: Jeff's Blog
 site_author: Jeff Liu
-site_url: https://jeffliulab.github.io/algorithm-notes/
+site_url: https://jeffliulab.github.io/blog/
 
 theme:
   name: material
@@ -22,7 +22,7 @@ plugins:
           build: true
 
 nav:
-  - INTRO: index.md
+  - HOME: index.md
 
 markdown_extensions:
   - attr_list
