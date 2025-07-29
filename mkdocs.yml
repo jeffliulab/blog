@@ -23,14 +23,6 @@ plugins:
 
 nav:
   - INTRO: index.md
-  - Common:
-    - 算法宝典: 算法宝典.md
-    - Data Structures: data_structures.md
-    - Leetcode Temporary: Leetcode/leetcode.md
-  - Machine Learning:
-    - 常见面试问题: ML/index.md
-  - Hard Questions:
-    - Hard_Questions: Hard/hard_01.md
 
 markdown_extensions:
   - attr_list
