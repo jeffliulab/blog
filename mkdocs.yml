@@ -22,7 +22,8 @@ plugins:
           build: true
 
 nav:
-  - HOME: index.md
+  - Home: index.md
+  - Algorithms Diaries: notes_algorithms/diary_algorithms_2025.md
 
 markdown_extensions:
   - attr_list
