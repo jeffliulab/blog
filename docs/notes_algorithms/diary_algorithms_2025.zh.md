@@ -2,9 +2,89 @@
 
 有一些非常有趣、值得思索和探讨的算法技巧，不记录下来感觉很可惜！所以在本日志中，我将记录那些在我学习算法过程中遇到的令我难忘的算法题或算法技巧。
 
+本日记为倒序排序，最上方的为最新的。
+
+#### 串联所有单词的子串：滑动窗口优化
+
+2025年7月30日 下午 
+
+原题目：[LeetCode 30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
+
+这道题比较简单的一点是所有的单词长度都是一样的，所以我们只需要把和所有单词总长一样的窗口构建出来，然后判断窗口内的单词是否合格。在滑动窗口的时候，我们可以只移动一个单词的长度。
+
+算法思路如下：
+
+1. 构建一个hashmap存储已知单词信息；一个cur_hashmap存储窗口信息
+2. 构建一个左指针L，记录单词长度为length，L分别从length的不同位置出发
+3. 构建一个右指针R，代表窗口的结束，R从L出发的位置出发
+4. 滑动R，以length为步长，每当一个单词滑入时：
+   1. 判断单词是否在已知hashmap中，如果不在，当前窗口作废
+   2. 如果在，判断当前窗口和已知hashmap是否一致，一致的话就记录L
+
+整体思路非常简单和清晰，但是如果直接去对比cur_hashmap和hashmap的话，会牺牲很多时间。在此基础上，我们可以对滑动窗口时判断进行优化。
+
+我们可以设置一个valid_count，当且仅当新滑入窗口的单词new_word在hashmap中的时候，我们增加valid_count的计数；当且仅当cur_hashmap[new_word]超过hashmap[new_word]的时候，我们固定R，收缩L，直到cur_hashmap[new_word]==hashmap[new_word]。
+
+在我们收缩窗口的时候，当且仅当左边扔出去的单词left_word不是new_word的时候，我们才减少valid_count。
+
+最后，如果valid_count == target_valid_count（也就是hashmap中单词的总数），我们就给结果加一。
+
+**代码实现如下：**
+
+```python
+class Solution:
+    def findSubstring(self, s: str, words: List[str]) -> List[int]:
+        if not words:
+            return []
+
+        hashmap = {}
+        target_valid_count = 0
+        for word in words:
+            target_valid_count += 1
+            hashmap[word] = hashmap.get(word, 0) + 1
+        length = len(words[0])
+  
+        result = []
+        cur_hashmap = {}
+        L = 0
+        for i in range(length):
+            cur_hashmap.clear()
+            valid_count = 0
+            L = i
+
+            valid_count = 0
+            for R in range(i, len(s), length):
+                new_word = s[R:R+length]
+                if new_word not in hashmap:
+                    L = R+length
+                    valid_count = 0
+                    cur_hashmap.clear()
+                else:
+                    cur_hashmap[new_word] = cur_hashmap.get(new_word, 0) + 1
+                    if cur_hashmap[new_word] <= hashmap[new_word]:
+                        valid_count += 1
+                    else:
+                        while cur_hashmap[new_word] > hashmap[new_word]:
+                            left_word = s[L:L+length]
+                            cur_hashmap[left_word] -= 1
+                            L += length
+                            if left_word != new_word:
+                                valid_count -= 1
+                    if valid_count == target_valid_count:
+                        result.append(L)
+  
+        return result
+```
+
+**AC表现如下：**
+
+![1753905236532](image/diary_algorithms_2025.zh/1753905236532.png){style="display:block; margin:auto; width:400px;"}
+
 #### 单词搜索II的四重剪枝
 
-2025年7月30日 原题目：[Leetcode 212. Word Search II](https://leetcode.com/problems/word-search-ii/)
+2025年7月30日 凌晨 
+
+原题目：[LeetCode 212. Word Search II](https://leetcode.com/problems/word-search-ii/)
 
 **优化一：找到单词后从Trie中移除技巧：**
 
@@ -90,7 +170,7 @@ class Solution:
 
             if cur_char not in root.children:
                 return
-          
+        
             node = root.children[cur_char]
 
             if node.word is not None:
@@ -121,4 +201,4 @@ class Solution:
 
 **AC表现如下：**
 
-![1753851198149](image/diary_algorithms_2025.zh/1753851198149.png)
+![1753851198149](image/diary_algorithms_2025.zh/1753851198149.png){style="display:block; margin:auto; width:400px;"}

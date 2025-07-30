@@ -2,9 +2,89 @@
 
 There are some very interesting algorithm techniques that are worth contemplating and discussing. It would be a shame not to document them! Therefore, in this journal, I will record the unforgettable algorithm problems or techniques I encounter during my studies.
 
+This diary is sorted in reverse chronological order, with the newest entry at the top.
+
+#### Substring with Concatenation of All Words: Sliding Window Optimization
+
+July 30, 2025, Afternoon
+
+Original problem: [LeetCode 30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
+
+One relatively simple aspect of this problem is that all the words are of the same length. Therefore, we only need to construct a window with a total length equal to the sum of all words, and then check if the words in the window are valid. While sliding the window, we can move one word length at a time.
+
+The algorithm works as follows:
+
+1. Build a hashmap to store the given word counts; also create a `cur_hashmap` to track the window content.
+2. Set up a left pointer `L`, and let `L` start from different positions within one word length.
+3. Set up a right pointer `R` to represent the end of the window, starting from the same position as `L`.
+4. Slide `R` in steps of word length. For each word sliding into the window:
+   1. Check whether the word exists in the given hashmap. If not, the current window is invalid.
+   2. If it does, check whether `cur_hashmap` matches the original hashmap. If they match, record the position `L`.
+
+The overall idea is very simple and clear, but directly comparing `cur_hashmap` and the original hashmap can be time-consuming. To optimize, we can refine the checking during the sliding window process.
+
+We can introduce a variable `valid_count`. Only when the new word `new_word` entering the window exists in the hashmap do we increase `valid_count`. If `cur_hashmap[new_word]` exceeds `hashmap[new_word]`, we freeze `R` and shrink `L` until `cur_hashmap[new_word] == hashmap[new_word]`.
+
+While shrinking the window, we only decrease `valid_count` when the word pushed out from the left, `left_word`, is not the same as `new_word`.
+
+Finally, if `valid_count == target_valid_count` (which is the total number of words in the hashmap), we add the current `L` to the result.
+
+**Code implementation is as follows:**
+
+```python
+class Solution:
+    def findSubstring(self, s: str, words: List[str]) -> List[int]:
+        if not words:
+            return []
+
+        hashmap = {}
+        target_valid_count = 0
+        for word in words:
+            target_valid_count += 1
+            hashmap[word] = hashmap.get(word, 0) + 1
+        length = len(words[0])
+  
+        result = []
+        cur_hashmap = {}
+        L = 0
+        for i in range(length):
+            cur_hashmap.clear()
+            valid_count = 0
+            L = i
+
+            valid_count = 0
+            for R in range(i, len(s), length):
+                new_word = s[R:R+length]
+                if new_word not in hashmap:
+                    L = R+length
+                    valid_count = 0
+                    cur_hashmap.clear()
+                else:
+                    cur_hashmap[new_word] = cur_hashmap.get(new_word, 0) + 1
+                    if cur_hashmap[new_word] <= hashmap[new_word]:
+                        valid_count += 1
+                    else:
+                        while cur_hashmap[new_word] > hashmap[new_word]:
+                            left_word = s[L:L+length]
+                            cur_hashmap[left_word] -= 1
+                            L += length
+                            if left_word != new_word:
+                                valid_count -= 1
+                    if valid_count == target_valid_count:
+                        result.append(L)
+  
+        return result
+```
+
+**AC Performance:**
+
+![1753905236532](image/diary_algorithms_2025.zh/1753905236532.png){style="display:block; margin:auto; width:400px;"}
+
 #### Four Pruning Techniques for Word Search II
 
-July 30, 2025 Original Problem: [Leetcode 212. Word Search II](https://leetcode.com/problems/word-search-ii/)
+July 30, 2025 Early Morning
+
+Original Problem: [Leetcode 212. Word Search II](https://leetcode.com/problems/word-search-ii/)
 
 **Optimization 1: Removing a Word from the Trie After Finding It**
 
