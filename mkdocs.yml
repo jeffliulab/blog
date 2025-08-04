@@ -24,6 +24,7 @@ plugins:
 nav:
   - Home: index.md
   - Algorithms Diaries: notes_algorithms/diary_algorithms_2025.md
+  - Finance Diaries: notes_finance/finance_diary_2025.md
 
 markdown_extensions:
   - attr_list
