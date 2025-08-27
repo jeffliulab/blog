@@ -1,0 +1,643 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Jeff Liu">
+      
+      
+        <link rel="canonical" href="https://jeffliulab.github.io/blog/zh/notes_algorithms/diary_algorithms_2025/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../../notes_finance/finance_diary_2025/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Algorithms Diaries - Jeff's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../" title="Jeff&#39;s Blog" class="md-header__button md-logo" aria-label="Jeff's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jeff's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Algorithms Diaries
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../notes_algorithms/diary_algorithms_2025/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh" class="md-select__link">
+              中文
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Jeff&#39;s Blog" class="md-nav__button md-logo" aria-label="Jeff's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Jeff's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Algorithms Diaries
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Algorithms Diaries
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      串联所有单词的子串：滑动窗口优化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      单词搜索II的四重剪枝
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_finance/finance_diary_2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finance Diaries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      串联所有单词的子串：滑动窗口优化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      单词搜索II的四重剪枝
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">算法学习日记</h1>
+<p>有一些非常有趣、值得思索和探讨的算法技巧，不记录下来感觉很可惜！所以在本日志中，我将记录那些在我学习算法过程中遇到的令我难忘的算法题或算法技巧。</p>
+<p>本日记为倒序排序，最上方的为最新的。</p>
+<h4 id="_2">串联所有单词的子串：滑动窗口优化</h4>
+<p>2025年7月30日 下午 </p>
+<p>原题目：<a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/">LeetCode 30. Substring with Concatenation of All Words</a></p>
+<p>这道题比较简单的一点是所有的单词长度都是一样的，所以我们只需要把和所有单词总长一样的窗口构建出来，然后判断窗口内的单词是否合格。在滑动窗口的时候，我们可以只移动一个单词的长度。</p>
+<p>算法思路如下：</p>
+<ol>
+<li>构建一个hashmap存储已知单词信息；一个cur_hashmap存储窗口信息</li>
+<li>构建一个左指针L，记录单词长度为length，L分别从length的不同位置出发</li>
+<li>构建一个右指针R，代表窗口的结束，R从L出发的位置出发</li>
+<li>滑动R，以length为步长，每当一个单词滑入时：</li>
+<li>判断单词是否在已知hashmap中，如果不在，当前窗口作废</li>
+<li>如果在，判断当前窗口和已知hashmap是否一致，一致的话就记录L</li>
+</ol>
+<p>整体思路非常简单和清晰，但是如果直接去对比cur_hashmap和hashmap的话，会牺牲很多时间。在此基础上，我们可以对滑动窗口时判断进行优化。</p>
+<p>我们可以设置一个valid_count，当且仅当新滑入窗口的单词new_word在hashmap中的时候，我们增加valid_count的计数；当且仅当cur_hashmap[new_word]超过hashmap[new_word]的时候，我们固定R，收缩L，直到cur_hashmap[new_word]==hashmap[new_word]。</p>
+<p>在我们收缩窗口的时候，当且仅当左边扔出去的单词left_word不是new_word的时候，我们才减少valid_count。</p>
+<p>最后，如果valid_count == target_valid_count（也就是hashmap中单词的总数），我们就给结果加一。</p>
+<p><strong>代码实现如下：</strong></p>
+<pre><code class="language-python">class Solution:
+    def findSubstring(self, s: str, words: List[str]) -&gt; List[int]:
+        if not words:
+            return []
+
+        hashmap = {}
+        target_valid_count = 0
+        for word in words:
+            target_valid_count += 1
+            hashmap[word] = hashmap.get(word, 0) + 1
+        length = len(words[0])
+
+        result = []
+        cur_hashmap = {}
+        L = 0
+        for i in range(length):
+            cur_hashmap.clear()
+            valid_count = 0
+            L = i
+
+            valid_count = 0
+            for R in range(i, len(s), length):
+                new_word = s[R:R+length]
+                if new_word not in hashmap:
+                    L = R+length
+                    valid_count = 0
+                    cur_hashmap.clear()
+                else:
+                    cur_hashmap[new_word] = cur_hashmap.get(new_word, 0) + 1
+                    if cur_hashmap[new_word] &lt;= hashmap[new_word]:
+                        valid_count += 1
+                    else:
+                        while cur_hashmap[new_word] &gt; hashmap[new_word]:
+                            left_word = s[L:L+length]
+                            cur_hashmap[left_word] -= 1
+                            L += length
+                            if left_word != new_word:
+                                valid_count -= 1
+                    if valid_count == target_valid_count:
+                        result.append(L)
+
+        return result
+</code></pre>
+<p><strong>AC表现如下：</strong></p>
+<p><img alt="1753905236532" src="../../../notes_algorithms/image/diary_algorithms_2025.zh/1753905236532.png" style="display:block; margin:auto; width:400px;" /></p>
+<h4 id="ii">单词搜索II的四重剪枝</h4>
+<p>2025年7月30日 凌晨 </p>
+<p>原题目：<a href="https://leetcode.com/problems/word-search-ii/">LeetCode 212. Word Search II</a></p>
+<p><strong>优化一：找到单词后从Trie中移除技巧：</strong></p>
+<p>在DFS中，当找到一个单词后（if node.word is not None:），除了将它加入结果集，还要立即执行 node.word = None。</p>
+<p>这样做可以：</p>
+<ul>
+<li>防止重复：避免从不同路径找到同一个棋盘位置上的单词时重复添加。</li>
+<li>轻微加速：后续DFS再经过此节点时，不会重复执行 add 操作。</li>
+</ul>
+<p><strong>优化二：Trie节点动态剪枝 (Dynamic Trie Node Pruning)</strong></p>
+<p>技巧：在DFS回溯的过程中，如果一个Trie节点的所有子路径都已被探索完（即它的 children 字典变空），并且它自身也不再代表一个单词（node.word 已被设为 None），那么这个节点就成了无用节点，可以从其父节点中删除。</p>
+<p>这样做可以动态地缩小Trie树的规模。后续从其他起点开始的DFS将不会再进入这些已被“榨干”价值的死胡同分支，从而减少冗余计算。这是对Trie地图本身的剪枝。</p>
+<p><strong>优化三：邻接对预剪枝 (Adjacency Pre-Pruning)</strong></p>
+<p>这算是一种启发式剪枝 (Heuristic Pruning)。</p>
+<ul>
+<li>预处理：先遍历一遍board，将所有物理上相邻的字母对（如"oa", "an"）存入一个哈希集合 has。</li>
+<li>过滤：在将 word 加入Trie树之前，检查该word中所有的字母对（如"oath"中的"oa", "at", "th"）。只要有一对（及其反向）不在 has 集合中，就说明这个word在物理上不可能构成，直接跳过，不加入Trie树。</li>
+</ul>
+<p>在核心算法开始前，通过一个低成本的预处理，从源头上剔除大量无效的候选单词。如果测试数据中无效候选词很多，这个优化能带来数量级的性能提升。</p>
+<p><strong>优化四：字符频率预剪枝 (Character Frequency Pre-Pruning)</strong></p>
+<p>这是另一种强大的启发式剪枝。</p>
+<ul>
+<li>预处理：统计board上每个字符的总数。</li>
+<li>过滤：对于每个word，也统计其自身的字符频率。如果word需要的任何一个字符的数量超过了board能提供的总数，则直接跳过该word。</li>
+</ul>
+<p>与优化三类似，也是在预处理阶段过滤无效单词。它对处理含大量重复字母的单词（如"banana"）特别有效。</p>
+<p><strong>实现代码：</strong></p>
+<pre><code class="language-python">class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.word = None
+
+class Solution:
+    def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]:
+        trie = TrieNode()
+        has = set()
+
+        rows = len(board)
+        cols = len(board[0])
+        directions = [
+            [0,1],[0,-1],[1,0],[-1,0]
+        ]
+
+        board_counts = Counter(c for row in board for c in row)
+
+        for r in range(rows):
+            for c in range(cols - 1):
+                has.add(board[r][c] + board[r][c + 1])
+        for r in range(rows - 1):
+            for c in range(cols):
+                has.add(board[r][c] + board[r + 1][c])
+
+        for word in words:
+            word_counts = Counter(word)
+            if any(word_counts[char] &gt; board_counts.get(char, 0) for char in word_counts):
+                continue
+
+            for i in range(len(word) - 1):
+                a, b = word[i], word[i + 1]
+                if a + b not in has and b + a not in has:
+                    break
+            else:
+                curr = trie
+                for char in word:
+                    if char not in curr.children:
+                        curr.children[char] = TrieNode()
+                    curr = curr.children[char]
+                curr.word = word
+
+        result = []
+        def tracking(i,j,root):
+            cur_char = board[i][j]
+
+            if cur_char not in root.children:
+                return
+
+            node = root.children[cur_char]
+
+            if node.word is not None:
+                result.append(node.word)
+                node.word = None
+
+            board[i][j] = '$'
+            for dx, dy in directions:
+                ni, nj = i + dx, j + dy
+                if 0 &lt;= ni &lt; rows and 0 &lt;= nj &lt; cols and board[ni][nj] != '$':
+                    next_char = board[ni][nj]
+                    if next_char in node.children:
+                        tracking(ni, nj, node)
+                        child_node = node.children[next_char]
+                        if not child_node.children: 
+                            del node.children[next_char] 
+
+            board[i][j] = cur_char
+
+        for i in range(rows):
+            for j in range(cols):
+                cur_char = board[i][j]
+                if cur_char in trie.children:
+                    tracking(i,j,trie)
+
+        return result
+</code></pre>
+<p><strong>AC表现如下：</strong></p>
+<p><img alt="1753851198149" src="../../../notes_algorithms/image/diary_algorithms_2025.zh/1753851198149.png" style="display:block; margin:auto; width:400px;" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

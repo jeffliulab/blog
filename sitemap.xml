@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://jeffliulab.github.io/blog/</loc>
+        <lastmod>2025-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/blog/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/blog/zh/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/blog/notes_algorithms/diary_algorithms_2025/</loc>
+        <lastmod>2025-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/blog/notes_algorithms/diary_algorithms_2025/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/blog/zh/notes_algorithms/diary_algorithms_2025/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/blog/notes_finance/finance_diary_2025/</loc>
+        <lastmod>2025-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/blog/notes_finance/finance_diary_2025/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/blog/zh/notes_finance/finance_diary_2025/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/blog/zh/</loc>
+        <lastmod>2025-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/blog/zh/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/blog/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/blog/zh/notes_algorithms/diary_algorithms_2025/</loc>
+        <lastmod>2025-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/blog/zh/notes_algorithms/diary_algorithms_2025/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/blog/notes_algorithms/diary_algorithms_2025/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/blog/zh/notes_finance/finance_diary_2025/</loc>
+        <lastmod>2025-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/blog/zh/notes_finance/finance_diary_2025/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/blog/notes_finance/finance_diary_2025/"/>
+    </url>
+</urlset>

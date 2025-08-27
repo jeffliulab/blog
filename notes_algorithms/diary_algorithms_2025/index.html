@@ -1,0 +1,643 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Jeff Liu">
+      
+      
+        <link rel="canonical" href="https://jeffliulab.github.io/blog/notes_algorithms/diary_algorithms_2025/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../notes_finance/finance_diary_2025/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Algorithms Diaries - Jeff's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#diary-of-learning-algorithms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Jeff&#39;s Blog" class="md-header__button md-logo" aria-label="Jeff's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jeff's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Algorithms Diaries
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../zh/notes_algorithms/diary_algorithms_2025/" hreflang="zh" class="md-select__link">
+              中文
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jeff&#39;s Blog" class="md-nav__button md-logo" aria-label="Jeff's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Jeff's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Algorithms Diaries
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Algorithms Diaries
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#substring-with-concatenation-of-all-words-sliding-window-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substring with Concatenation of All Words: Sliding Window Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#four-pruning-techniques-for-word-search-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      Four Pruning Techniques for Word Search II
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_finance/finance_diary_2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finance Diaries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#substring-with-concatenation-of-all-words-sliding-window-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substring with Concatenation of All Words: Sliding Window Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#four-pruning-techniques-for-word-search-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      Four Pruning Techniques for Word Search II
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="diary-of-learning-algorithms">Diary of Learning Algorithms</h1>
+<p>There are some very interesting algorithm techniques that are worth contemplating and discussing. It would be a shame not to document them! Therefore, in this journal, I will record the unforgettable algorithm problems or techniques I encounter during my studies.</p>
+<p>This diary is sorted in reverse chronological order, with the newest entry at the top.</p>
+<h4 id="substring-with-concatenation-of-all-words-sliding-window-optimization">Substring with Concatenation of All Words: Sliding Window Optimization</h4>
+<p>July 30, 2025, Afternoon</p>
+<p>Original problem: <a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/">LeetCode 30. Substring with Concatenation of All Words</a></p>
+<p>One relatively simple aspect of this problem is that all the words are of the same length. Therefore, we only need to construct a window with a total length equal to the sum of all words, and then check if the words in the window are valid. While sliding the window, we can move one word length at a time.</p>
+<p>The algorithm works as follows:</p>
+<ol>
+<li>Build a hashmap to store the given word counts; also create a <code>cur_hashmap</code> to track the window content.</li>
+<li>Set up a left pointer <code>L</code>, and let <code>L</code> start from different positions within one word length.</li>
+<li>Set up a right pointer <code>R</code> to represent the end of the window, starting from the same position as <code>L</code>.</li>
+<li>Slide <code>R</code> in steps of word length. For each word sliding into the window:</li>
+<li>Check whether the word exists in the given hashmap. If not, the current window is invalid.</li>
+<li>If it does, check whether <code>cur_hashmap</code> matches the original hashmap. If they match, record the position <code>L</code>.</li>
+</ol>
+<p>The overall idea is very simple and clear, but directly comparing <code>cur_hashmap</code> and the original hashmap can be time-consuming. To optimize, we can refine the checking during the sliding window process.</p>
+<p>We can introduce a variable <code>valid_count</code>. Only when the new word <code>new_word</code> entering the window exists in the hashmap do we increase <code>valid_count</code>. If <code>cur_hashmap[new_word]</code> exceeds <code>hashmap[new_word]</code>, we freeze <code>R</code> and shrink <code>L</code> until <code>cur_hashmap[new_word] == hashmap[new_word]</code>.</p>
+<p>While shrinking the window, we only decrease <code>valid_count</code> when the word pushed out from the left, <code>left_word</code>, is not the same as <code>new_word</code>.</p>
+<p>Finally, if <code>valid_count == target_valid_count</code> (which is the total number of words in the hashmap), we add the current <code>L</code> to the result.</p>
+<p><strong>Code implementation is as follows:</strong></p>
+<pre><code class="language-python">class Solution:
+    def findSubstring(self, s: str, words: List[str]) -&gt; List[int]:
+        if not words:
+            return []
+
+        hashmap = {}
+        target_valid_count = 0
+        for word in words:
+            target_valid_count += 1
+            hashmap[word] = hashmap.get(word, 0) + 1
+        length = len(words[0])
+
+        result = []
+        cur_hashmap = {}
+        L = 0
+        for i in range(length):
+            cur_hashmap.clear()
+            valid_count = 0
+            L = i
+
+            valid_count = 0
+            for R in range(i, len(s), length):
+                new_word = s[R:R+length]
+                if new_word not in hashmap:
+                    L = R+length
+                    valid_count = 0
+                    cur_hashmap.clear()
+                else:
+                    cur_hashmap[new_word] = cur_hashmap.get(new_word, 0) + 1
+                    if cur_hashmap[new_word] &lt;= hashmap[new_word]:
+                        valid_count += 1
+                    else:
+                        while cur_hashmap[new_word] &gt; hashmap[new_word]:
+                            left_word = s[L:L+length]
+                            cur_hashmap[left_word] -= 1
+                            L += length
+                            if left_word != new_word:
+                                valid_count -= 1
+                    if valid_count == target_valid_count:
+                        result.append(L)
+
+        return result
+</code></pre>
+<p><strong>AC Performance:</strong></p>
+<p><img alt="1753905236532" src="../image/diary_algorithms_2025.zh/1753905236532.png" style="display:block; margin:auto; width:400px;" /></p>
+<h4 id="four-pruning-techniques-for-word-search-ii">Four Pruning Techniques for Word Search II</h4>
+<p>July 30, 2025 Early Morning</p>
+<p>Original Problem: <a href="https://leetcode.com/problems/word-search-ii/">Leetcode 212. Word Search II</a></p>
+<p><strong>Optimization 1: Removing a Word from the Trie After Finding It</strong></p>
+<p><strong>Technique:</strong> In the DFS, after a word is found (i.e., <code>if node.word is not None:</code>), in addition to adding it to the result set, immediately execute <code>node.word = None</code>.</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li><strong>Prevents Duplicates:</strong> Avoids adding the same word found from different paths starting at the same board position.</li>
+<li><strong>Slight Speed-up:</strong> Subsequent DFS traversals passing through this node will not trigger the <code>add</code> operation again.</li>
+</ul>
+<p><strong>Optimization 2: Dynamic Trie Node Pruning</strong></p>
+<p><strong>Technique:</strong> During the backtracking phase of the DFS, if all of a Trie node's child paths have been explored (i.e., its <code>children</code> dictionary becomes empty) and it no longer represents a complete word (<code>node.word</code> has already been set to <code>None</code>), then this node has become useless and can be removed from its parent.</p>
+<p>This dynamically shrinks the size of the Trie. Subsequent DFS searches starting from other board positions will not enter these "exhausted" dead-end branches, thus reducing redundant computations. This is a form of pruning on the Trie structure itself.</p>
+<p><strong>Optimization 3: Adjacency Pre-Pruning</strong></p>
+<p>This can be considered a form of Heuristic Pruning.</p>
+<ul>
+<li><strong>Preprocessing:</strong> First, iterate through the <code>board</code> to store all physically adjacent character pairs (e.g., "oa", "an") in a hash set.</li>
+<li><strong>Filtering:</strong> Before adding a <code>word</code> to the Trie, check all its adjacent character pairs (e.g., in "oath", the pairs are "oa", "at", "th"). If any pair (or its reverse) does not exist in the hash set, it means this word is physically impossible to form on the board. Skip this word and do not add it to the Trie.</li>
+</ul>
+<p>This method eliminates a large number of invalid candidate words from the source with a low-cost preprocessing step before the core algorithm begins. If the test data contains many invalid candidate words, this optimization can lead to a performance improvement of orders of magnitude.</p>
+<p><strong>Optimization 4: Character Frequency Pre-Pruning</strong></p>
+<p>This is another powerful heuristic pruning technique.</p>
+<ul>
+<li><strong>Preprocessing:</strong> Count the total frequency of each character on the <code>board</code>.</li>
+<li><strong>Filtering:</strong> For each <code>word</code>, also count its own character frequencies. If the count of any character required by the <code>word</code> exceeds the total count available on the <code>board</code>, skip that word directly.</li>
+</ul>
+<p>Similar to Optimization 3, this also filters out invalid words during a preprocessing phase. It is particularly effective for words containing many repeated letters (e.g., "banana").</p>
+<p><strong>Implementation Code:</strong></p>
+<pre><code class="language-python">class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.word = None
+
+class Solution:
+    def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]:
+        trie = TrieNode()
+        has = set()
+
+        rows = len(board)
+        cols = len(board[0])
+        directions = [
+            [0,1],[0,-1],[1,0],[-1,0]
+        ]
+
+        board_counts = Counter(c for row in board for c in row)
+
+        for r in range(rows):
+            for c in range(cols - 1):
+                has.add(board[r][c] + board[r][c + 1])
+        for r in range(rows - 1):
+            for c in range(cols):
+                has.add(board[r][c] + board[r + 1][c])
+
+        for word in words:
+            word_counts = Counter(word)
+            if any(word_counts[char] &gt; board_counts.get(char, 0) for char in word_counts):
+                continue
+
+            for i in range(len(word) - 1):
+                a, b = word[i], word[i + 1]
+                if a + b not in has and b + a not in has:
+                    break
+            else:
+                curr = trie
+                for char in word:
+                    if char not in curr.children:
+                        curr.children[char] = TrieNode()
+                    curr = curr.children[char]
+                curr.word = word
+
+        result = []
+        def tracking(i,j,root):
+            cur_char = board[i][j]
+
+            if cur_char not in root.children:
+                return
+
+            node = root.children[cur_char]
+
+            if node.word is not None:
+                result.append(node.word)
+                node.word = None
+
+            board[i][j] = '$'
+            for dx, dy in directions:
+                ni, nj = i + dx, j + dy
+                if 0 &lt;= ni &lt; rows and 0 &lt;= nj &lt; cols and board[ni][nj] != '$':
+                    next_char = board[ni][nj]
+                    if next_char in node.children:
+                        tracking(ni, nj, node)
+                        child_node = node.children[next_char]
+                        if not child_node.children: 
+                            del node.children[next_char] 
+
+            board[i][j] = cur_char
+
+        for i in range(rows):
+            for j in range(cols):
+                cur_char = board[i][j]
+                if cur_char in trie.children:
+                    tracking(i,j,trie)
+
+        return result
+</code></pre>
+<p><strong>AC Performance:</strong></p>
+<p><img alt="1753851198149" src="../image/diary_algorithms_2025.zh/1753851198149.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
